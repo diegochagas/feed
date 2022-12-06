@@ -23,7 +23,7 @@ export const posts = [
   {
     id: '2',
     author: {
-      avatarUrl: 'https:github.com/maykbrito.png',
+      avatarUrl: 'https://github.com/maykbrito.png',
       name: 'Mayk Brito',
       role: 'Educator @Rocketseat'
     },
