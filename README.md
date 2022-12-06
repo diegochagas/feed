@@ -10,4 +10,6 @@ Execute on the main folder ```npm install``` and ```npm start```
 
 http://127.0.0.1:5173/
 
+---
+
 # God be praised!
