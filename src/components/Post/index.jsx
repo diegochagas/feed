@@ -1,4 +1,5 @@
 import React from 'react';
+import Avatar from '../../Avatar';
 
 import Comment from '../Comment';
 
@@ -9,7 +10,7 @@ function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.avatar} src="https://github.com/diegochagas.png" alt="profile picture" />
+          <Avatar src="https://github.com/diego3g.png" />
 
           <div className={styles.authorInfo}>
             <strong>Diego Chagas</strong>
