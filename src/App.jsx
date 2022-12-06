@@ -16,6 +16,10 @@ function App() {
         
         <main>
           <Post author="" content="" />
+
+          <Post author="" content="" />
+          
+          <Post author="" content="" />
         </main>
       </div>
     </div>
