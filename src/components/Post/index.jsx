@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { format, formatDistanceToNow } from 'date-fns'
 
-import Avatar from '../../Avatar';
+import Avatar from '../Avatar';
 import Comment from '../Comment';
 
 import styles from './Post.module.css'

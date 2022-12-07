@@ -7,6 +7,8 @@ function Header() {
   return (
     <header className={styles.header}>
       <img src={igniteLogo} alt="ignite logotype" />
+
+      <span>Ignite feed</span>
     </header>
   
   );

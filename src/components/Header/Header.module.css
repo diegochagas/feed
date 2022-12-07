@@ -3,8 +3,14 @@
   display: flex;
   justify-content: center;
   padding: 1.25rem 0;
+  align-items: center;
+  gap: .5rem;
 }
 
 .header img {
   height: 2rem;
+}
+
+.header span {
+  text-transform: capitalize;
 }
