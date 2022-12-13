@@ -16,7 +16,7 @@ interface Content {
 }
 
 export interface PostProps {
-  id: string,
+  id?: string,
   author: Author,
   content: Content[],
   publishedAt: Date
