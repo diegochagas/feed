@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import { format, formatDistanceToNow } from 'date-fns'
 
 import Avatar from '../Avatar';
 import Comment from '../Comment';
 
 import styles from './Post.module.css'
+import { PostProps } from '../../api';
 
-function Post({ author, publishedAt, content }) {
+function Post({ author, publishedAt, content }: PostProps) {
   const [comments, setComments] = useState(['Really cool post!'])
   const [newComment, setNewComment] = useState('')
   const publishedDateFormatted = format(publishedAt, "LLLL d 'at' HH:mm'h'")
   const publishedDateRelativeToNow = formatDistanceToNow(publishedAt, { addSuffix: true })
   const isNewCommentEmpty = newComment.length === 0
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault()
 
     setComments([...comments, newComment])
@@ -21,17 +22,17 @@ function Post({ author, publishedAt, content }) {
     setNewComment('')
   }
 
-  function handeNewCommentChange(event) {
+  function handeNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
     // event.taget.setCustomValidity('')
 
     setNewComment(event.target.value)
   }
 
-  /* function handleNewCommentInvalid(event) {
+  /* function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('This field is required')
   } */
 
-  function deleteComment(commentToDelete) {
+  function deleteComment(commentToDelete: string) {
     const commentsWithoutDeletedOne = comments.filter(comment => comment !== commentToDelete)
     
     setComments(commentsWithoutDeletedOne)
@@ -58,9 +59,9 @@ function Post({ author, publishedAt, content }) {
       <div className={styles.content}>
         {content.map(item => (
           <p key={item.id}>
-            {(item.type === 'paragraph') && item.content}
-            {(item.type === 'link') && <a href="#">{item.content}</a>}
-            {(item.type === 'hashtag') && item.content.map(hashtag => <a key={hashtag.id} href="">#{hashtag.content} </a>)}
+            {(item.type === 'paragraph') && item.content.map(element => element.content)}
+            {(item.type === 'link' ) && item.content.map(element => <a key={element.id} href="#">{element.content}</a>)}
+            {(item.type === 'hashtag') && item.content.map(element => <a key={element.id} href="">#{element.content} </a>)}
           </p>
         ))}
       </div>
